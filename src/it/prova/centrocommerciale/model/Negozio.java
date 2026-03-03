@@ -9,12 +9,14 @@ public class Negozio {
     private String partitaIVA;
     private CentroCommerciale centroCommerciale;
     private List<Item> item = new ArrayList<>();
+    private List<Lavoratore> lavoratori = new ArrayList<>();
 
-    public Negozio(String ragioneSociale, String partitaIVA, CentroCommerciale centroCommerciale, List<Item> item) {
+    public Negozio(String ragioneSociale, String partitaIVA, CentroCommerciale centroCommerciale, List<Item> item, List<Lavoratore> lavoratori) {
         this.ragioneSociale = ragioneSociale;
         this.partitaIVA = partitaIVA;
         this.centroCommerciale = centroCommerciale;
         this.item = item;
+        this.lavoratori = lavoratori;
     }
 
     public Negozio() {
@@ -52,6 +54,14 @@ public class Negozio {
         this.item = item;
     }
 
+    public List<Lavoratore> getLavoratori() {
+        return lavoratori;
+    }
+
+    public void setLavoratori(List<Lavoratore> lavoratori) {
+        this.lavoratori = lavoratori;
+    }
+
     /*public boolean addToItems(Lavoratore lavoratore, Item item) {
 
     }
@@ -67,6 +77,7 @@ public class Negozio {
                 ", partitaIVA='" + partitaIVA + '\'' +
                 ", centroCommerciale=" + centroCommerciale +
                 ", item=" + item +
+                ", lavoratori=" + lavoratori +
                 '}';
     }
 }
