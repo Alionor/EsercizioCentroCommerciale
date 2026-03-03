@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Negozio {
 
-    String ragioneSociale;
-    String partitaIVA;
-    CentroCommerciale centroCommerciale;
-    List<Item> item = new ArrayList<>();
+    private String ragioneSociale;
+    private String partitaIVA;
+    private CentroCommerciale centroCommerciale;
+    private List<Item> item = new ArrayList<>();
 
     public Negozio(String ragioneSociale, String partitaIVA, CentroCommerciale centroCommerciale, List<Item> item) {
         this.ragioneSociale = ragioneSociale;

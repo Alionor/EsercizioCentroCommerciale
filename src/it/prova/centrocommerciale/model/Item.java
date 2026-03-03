@@ -2,10 +2,10 @@ package it.prova.centrocommerciale.model;
 
 public class Item {
 
-    String codice;
-    String descrizione;
-    int prezzo;
-    Negozio negozio;
+    private String codice;
+    private String descrizione;
+    private int prezzo;
+    private Negozio negozio;
 
     public Item(String codice, String descrizione, int prezzo, Negozio negozio) {
         this.codice = codice;

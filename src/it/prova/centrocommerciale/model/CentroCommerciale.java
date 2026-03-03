@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CentroCommerciale {
-    String ragioneSociale;
-    String indirizzoPerEsteso;
-    List<Negozio> negozi = new ArrayList<>();
+    private String ragioneSociale;
+    private String indirizzoPerEsteso;
+    private List<Negozio> negozi = new ArrayList<>();
 
     public CentroCommerciale(String ragioneSociale, String indirizzoPerEsteso) {
         this.ragioneSociale = ragioneSociale;
