@@ -8,14 +8,14 @@ public class Negozio {
     private String ragioneSociale;
     private String partitaIVA;
     private CentroCommerciale centroCommerciale;
-    private List<Item> item = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
     private List<Lavoratore> lavoratori = new ArrayList<>();
 
     public Negozio(String ragioneSociale, String partitaIVA, CentroCommerciale centroCommerciale, List<Item> item, List<Lavoratore> lavoratori) {
         this.ragioneSociale = ragioneSociale;
         this.partitaIVA = partitaIVA;
         this.centroCommerciale = centroCommerciale;
-        this.item = item;
+        this.items = item;
         this.lavoratori = lavoratori;
     }
 
@@ -47,11 +47,11 @@ public class Negozio {
     }
 
     public List<Item> getItem() {
-        return item;
+        return items;
     }
 
     public void setItem(List<Item> item) {
-        this.item = item;
+        this.items = item;
     }
 
     public List<Lavoratore> getLavoratori() {
@@ -62,13 +62,38 @@ public class Negozio {
         this.lavoratori = lavoratori;
     }
 
-    /*public boolean addToItems(Lavoratore lavoratore, Item item) {
-
+    /**
+     * Metodo che passa un lavoratore e un oggetto come parametro, controlla che
+     * il lavoratore possa effettivamente aggiungere un item, esegue il lavoro
+     * in caso afferamtivo e restituisce true o false a seconda che abbia o meno
+     * eseguito il lavoro.
+     **/
+    public boolean addToItems(Lavoratore lavoratore, Item item) {
+        if (this.lavoratori.contains(lavoratore)
+                && lavoratore.handleItemAdd(item)
+                && this.items.contains(item)) {
+            return this.getItem().add(item);
+        } else {
+            return false;
+        }
     }
 
+    /**
+     * Metodo che passa un lavoratore e un oggetto come parametro, controlla che
+     * il lavoratore possa effettivamente rimuovere un item, esegue il lavoro
+     * in caso afferamtivo e restituisce true o false a seconda che abbia o meno
+     * eseguito il lavoro.
+     **/
     public boolean removeFromItems(Lavoratore lavoratore, Item item) {
-
-    }*/
+        if (this.lavoratori.contains(lavoratore)
+                && lavoratore.handleItemRemove(item)
+                && this.items.contains(item)
+        ) {
+            return this.getItem().remove(item);
+        } else {
+            return false;
+        }
+    }
 
     @Override
     public String toString() {
@@ -76,7 +101,7 @@ public class Negozio {
                 "ragioneSociale='" + ragioneSociale + '\'' +
                 ", partitaIVA='" + partitaIVA + '\'' +
                 ", centroCommerciale=" + centroCommerciale +
-                ", item=" + item +
+                ", item=" + items +
                 ", lavoratori=" + lavoratori +
                 '}';
     }
