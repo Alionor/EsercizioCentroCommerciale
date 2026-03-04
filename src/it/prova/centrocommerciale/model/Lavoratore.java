@@ -15,6 +15,30 @@ public abstract class Lavoratore {
     public Lavoratore() {
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    public Negozio getNegozio() {
+        return negozio;
+    }
+
+    public void setNegozio(Negozio negozio) {
+        this.negozio = negozio;
+    }
+
     abstract boolean handleItemAdd(Item item);
 
     abstract boolean handleItemRemove(Item item);

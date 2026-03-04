@@ -4,6 +4,7 @@ public class PersonaleAmministrativo extends Lavoratore {
 
     public PersonaleAmministrativo() {
     }
+
     public PersonaleAmministrativo(String nome, String cognome, Negozio negozio) {
         this.nome = nome;
         this.cognome = cognome;
@@ -12,7 +13,7 @@ public class PersonaleAmministrativo extends Lavoratore {
 
     @Override
     boolean handleItemAdd(Item item) {
-        return true;
+        return this.getNegozio().getItem().add(item);
     }
 
     @Override
